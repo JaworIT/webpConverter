@@ -11,8 +11,8 @@ fs.readdir(directoryPath, (err, files) => {
   const formats = [".jpg", ".jpeg", ".png"];
   try {
     files.forEach((file) => {
-    
-      if (file.includes(".jpg") || file.includes(".png") || file.includes(".jpeg")) {
+
+      if (file.includes(".jpg") || file.includes(".png") || file.includes(".jpeg") || file.includes(".webp")) {
         let [fileName, exe] = file.split(".");
         webp.cwebp(`./in/${file}`, `./out/${fileName}.webp`);
       } else {
