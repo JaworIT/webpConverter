@@ -12,8 +12,11 @@ fs.readdir(directoryPath, (err, files) => {
   try {
     files.forEach((file) => {
 
-      if (file.includes(".jpg") || file.includes(".png") || file.includes(".jpeg") || file.includes(".webp")) {
+      if (file.includes(".jpg") || file.includes(".png") || file.includes(".jpeg") || file.includes(".webp") || file.includes(".JPEG"))
+      {
+
         let [fileName, exe] = file.split(".");
+        console.log(fileName + 'converted');
         webp.cwebp(`./in/${file}`, `./out/${fileName}.webp`);
       } else {
         return;
